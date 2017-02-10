@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {TodoForm} from './components/todo/TodoForm';
 // React component
 class App extends Component {
   constructor() {
@@ -33,10 +34,10 @@ class App extends Component {
           <h2>React Todos list</h2>
         </div>
         <div className="Todo-App">
-          <form>
-            {/* Bind handleInputChange to onChange event*/}
-            <input type="text" onChange={this.handleInputChange} value={this.state.currentTodo}/>
-          </form>
+          <TodoForm
+            handleInputChange={this.handleInputChange}
+            currentTodo={this.state.currentTodo}
+           />
           <div className="Todo-List">
             <ul>
             {/* A JSX comment: Must use curly brace to separate javascript from jsx */}
